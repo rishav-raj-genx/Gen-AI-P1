@@ -1,0 +1,4 @@
+# RAG Ingestion Pipeline & Chatbot Dependencies
+chromadb>=0.6.0
+onnxruntime>=1.14.0
+numpy>=1.22.0

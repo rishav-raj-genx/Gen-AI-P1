@@ -1,0 +1,1450 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sony WH-1000XM6 | Silence, Perfected. Flagship Noise Cancelling</title>
+  <meta name="description" content="Cinematic reveal and engineering showcase of the Sony WH-1000XM6 flagship wireless noise-cancelling headphones. Experience scroll-linked exploded technical engineering and interactive RAG document intelligence.">
+
+  <!-- Inter & SF Pro Display font styling -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Lucide icons via CDN -->
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root {
+      --bg-primary: #050505;
+      --bg-secondary: #0a0a0c;
+      --bg-panel: rgba(14, 15, 20, 0.75);
+      --border-subtle: rgba(255, 255, 255, 0.08);
+      --border-glow: rgba(0, 214, 255, 0.35);
+      --accent-sony-blue: #0050ff;
+      --accent-cyan: #00d6ff;
+      --accent-gradient: linear-gradient(135deg, #0050ff 0%, #00d6ff 100%);
+      --text-glow: 0 0 30px rgba(0, 214, 255, 0.25);
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      -webkit-font-smoothing: antialiased;
+      -moz-osx-font-smoothing: grayscale;
+    }
+
+    body {
+      background-color: var(--bg-primary);
+      color: #ffffff;
+      font-family: 'Inter', -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", Roboto, sans-serif;
+      overflow-x: hidden;
+      selection-background-color: #00d6ff;
+      selection-color: #000;
+    }
+
+    ::selection {
+      background: rgba(0, 214, 255, 0.3);
+      color: #ffffff;
+    }
+
+    /* Ambient background glows */
+    .ambient-glow-1 {
+      position: fixed;
+      top: 15%;
+      left: 50%;
+      transform: translateX(-50%);
+      width: 70vw;
+      height: 60vh;
+      background: radial-gradient(circle, rgba(0, 80, 255, 0.07) 0%, rgba(0, 214, 255, 0.03) 40%, transparent 70%);
+      filter: blur(80px);
+      pointer-events: none;
+      z-index: 1;
+    }
+
+    /* Glassmorphism utility */
+    .glass-nav {
+      background: rgba(5, 5, 5, 0.82);
+      backdrop-filter: blur(24px) saturate(180%);
+      -webkit-backdrop-filter: blur(24px) saturate(180%);
+      border-bottom: 1px solid var(--border-subtle);
+    }
+
+    .glass-card {
+      background: rgba(12, 13, 18, 0.65);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
+      border: 1px solid var(--border-subtle);
+      box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
+    }
+
+    .glass-card:hover {
+      border-color: rgba(0, 214, 255, 0.25);
+      box-shadow: 0 20px 50px rgba(0, 80, 255, 0.15);
+    }
+
+    /* Gradient Typography */
+    .text-gradient {
+      background: linear-gradient(180deg, #ffffff 40%, rgba(255, 255, 255, 0.7) 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-cyan {
+      background: linear-gradient(180deg, #ffffff 30%, #00d6ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    .text-gradient-blue {
+      background: linear-gradient(135deg, #00d6ff 0%, #0050ff 100%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+    }
+
+    /* Apple-grade sleek buttons */
+    .btn-gradient {
+      background: var(--accent-gradient);
+      color: #ffffff;
+      font-weight: 600;
+      position: relative;
+      transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+      box-shadow: 0 4px 20px rgba(0, 80, 255, 0.35);
+    }
+
+    .btn-gradient:hover {
+      box-shadow: 0 6px 30px rgba(0, 214, 255, 0.6);
+      transform: translateY(-1px);
+    }
+
+    .btn-outline {
+      background: rgba(255, 255, 255, 0.04);
+      border: 1px solid var(--border-subtle);
+      color: rgba(255, 255, 255, 0.85);
+      transition: all 0.25s ease;
+    }
+
+    .btn-outline:hover {
+      background: rgba(255, 255, 255, 0.1);
+      border-color: rgba(255, 255, 255, 0.25);
+      color: #ffffff;
+    }
+
+    /* Story beat cards transition */
+    .story-beat {
+      opacity: 0;
+      transform: translateY(28px);
+      transition: opacity 0.7s cubic-bezier(0.16, 1, 0.3, 1), transform 0.7s cubic-bezier(0.16, 1, 0.3, 1);
+      pointer-events: none;
+    }
+
+    .story-beat.active {
+      opacity: 1;
+      transform: translateY(0);
+      pointer-events: auto;
+    }
+
+    /* Custom range slider */
+    input[type=range] {
+      -webkit-appearance: none;
+      background: rgba(255, 255, 255, 0.15);
+      height: 4px;
+      border-radius: 2px;
+      outline: none;
+    }
+
+    input[type=range]::-webkit-slider-thumb {
+      -webkit-appearance: none;
+      width: 14px;
+      height: 14px;
+      border-radius: 50%;
+      background: #00d6ff;
+      cursor: pointer;
+      box-shadow: 0 0 10px #00d6ff;
+      transition: transform 0.15s ease;
+    }
+
+    input[type=range]::-webkit-slider-thumb:hover {
+      transform: scale(1.3);
+    }
+
+    /* Custom scrollbar */
+    ::-webkit-scrollbar {
+      width: 6px;
+    }
+    ::-webkit-scrollbar-track {
+      background: #050505;
+    }
+    ::-webkit-scrollbar-thumb {
+      background: #1f2430;
+      border-radius: 3px;
+    }
+    ::-webkit-scrollbar-thumb:hover {
+      background: #0050ff;
+    }
+
+    /* Pulse dot */
+    .pulse-dot {
+      display: inline-block;
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: #00d6ff;
+      box-shadow: 0 0 12px #00d6ff;
+      animation: pulse 2s infinite;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(0.95); opacity: 0.8; }
+      50% { transform: scale(1.3); opacity: 1; box-shadow: 0 0 18px #00d6ff; }
+      100% { transform: scale(0.95); opacity: 0.8; }
+    }
+  </style>
+</head>
+<body class="relative">
+
+  <div class="ambient-glow-1"></div>
+
+  <!-- ========================================================== -->
+  <!-- APPLE-STYLE MINIMALIST GLASS TOP NAVIGATION -->
+  <!-- ========================================================== -->
+  <header id="navbar" class="fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-out py-3.5 px-6 lg:px-12 flex items-center justify-between">
+    <!-- Brand / Product Title -->
+    <div class="flex items-center gap-3">
+      <a href="#hero" class="flex items-center gap-2 group text-decoration-none">
+        <span class="text-xs uppercase tracking-widest font-black text-white/50 group-hover:text-white transition">SONY</span>
+        <span class="text-white/20">|</span>
+        <span class="text-sm font-semibold tracking-tight text-white/90 group-hover:text-cyan-400 transition">WH-1000XM6</span>
+      </a>
+      <span class="hidden md:inline-flex items-center gap-1.5 px-2.5 py-0.5 rounded-full text-[10px] font-medium bg-blue-500/10 text-cyan-400 border border-cyan-500/20">
+        <span class="pulse-dot"></span> Next-Gen Acoustic
+      </span>
+    </div>
+
+    <!-- Center Navigation Links -->
+    <nav class="hidden md:flex items-center gap-8 text-[13px] font-medium text-white/60">
+      <a href="#hero" class="hover:text-white transition" onclick="scrollToProgress(0.05)">Overview</a>
+      <a href="#engineering" class="hover:text-white transition" onclick="scrollToProgress(0.28)">Engineering</a>
+      <a href="#noise-cancelling" class="hover:text-white transition" onclick="scrollToProgress(0.52)">Noise Cancelling</a>
+      <a href="#acoustics" class="hover:text-white transition" onclick="scrollToProgress(0.75)">Sound & Upscaling</a>
+      <button onclick="openSpecsModal()" class="hover:text-white transition">Specs</button>
+      <button onclick="openRAGModal()" class="flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-semibold bg-cyan-950/60 text-cyan-300 border border-cyan-500/30 hover:bg-cyan-900/60 hover:text-white transition shadow-sm">
+        <i data-lucide="cpu" class="w-3.5 h-3.5 text-cyan-400"></i> RAG AI Manual
+      </button>
+    </nav>
+
+    <!-- Right Action CTAs -->
+    <div class="flex items-center gap-3">
+      <button onclick="openRAGModal()" class="md:hidden flex items-center gap-1 px-2.5 py-1.5 rounded-lg text-xs font-medium bg-cyan-950/80 text-cyan-300 border border-cyan-500/40">
+        <i data-lucide="sparkles" class="w-3 h-3"></i> AI Manual
+      </button>
+      <button onclick="openPreorderModal()" class="btn-gradient text-xs px-4 py-2 rounded-full tracking-tight flex items-center gap-1.5">
+        <span>Experience WH-1000XM6</span>
+        <i data-lucide="arrow-right" class="w-3.5 h-3.5"></i>
+      </button>
+    </div>
+  </header>
+
+
+  <!-- ========================================================== -->
+  <!-- MAIN SCROLLYTELLING CONTAINER (~450vh scroll distance) -->
+  <!-- ========================================================== -->
+  <main id="scrolly-container" class="relative w-full" style="height: 460vh;">
+
+    <!-- STICKY FULLSCREEN CANVAS WRAPPER -->
+    <div class="sticky top-0 left-0 w-full h-screen overflow-hidden flex items-center justify-center bg-[#050505]">
+      
+      <!-- HTML5 Video Frame Sequence Canvas -->
+      <canvas id="product-canvas" class="relative z-10 w-full h-full object-contain pointer-events-none" style="background-color: #050505;"></canvas>
+
+      <!-- Sub-ambient radial lighting behind canvas -->
+      <div class="absolute inset-0 z-0 flex items-center justify-center pointer-events-none">
+        <div id="radial-glow" class="w-[60vw] h-[60vh] rounded-full bg-gradient-to-tr from-blue-900/10 via-cyan-900/5 to-transparent blur-[120px] transition-all duration-700"></div>
+      </div>
+
+      <!-- ======================================================== -->
+      <!-- STORYTELLING OVERLAYS (SYNCHRONIZED WITH SCROLL MILESTONES)-->
+      <!-- ======================================================== -->
+
+      <!-- BEAT 1: HERO / INTRO (0% – 15%) -->
+      <div id="beat-1" class="story-beat active absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center pointer-events-none">
+        <div class="max-w-3xl flex flex-col items-center">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-medium tracking-wide bg-white/5 border border-white/10 text-white/70 mb-6 backdrop-blur-md">
+            <span class="w-2 h-2 rounded-full bg-cyan-400"></span> World Premiere &bull; Audio Innovation
+          </div>
+          <h1 class="text-4xl sm:text-6xl lg:text-7xl font-extrabold tracking-tight text-gradient leading-[1.08] mb-4">
+            Sony WH-1000XM6
+          </h1>
+          <p class="text-xl sm:text-2xl lg:text-3xl font-light text-gradient-cyan tracking-tight mb-6">
+            Silence, perfected.
+          </p>
+          <p class="max-w-xl text-sm sm:text-base text-white/60 font-normal leading-relaxed mb-8">
+            Flagship wireless noise cancelling, re‑engineered for a world that never stops. Scroll down to unpack every micro-component of our custom acoustic architecture.
+          </p>
+          <div class="flex items-center gap-4 pointer-events-auto">
+            <button onclick="scrollToProgress(0.25)" class="btn-gradient text-xs sm:text-sm px-6 py-3 rounded-full flex items-center gap-2">
+              <span>Explore Engineering</span>
+              <i data-lucide="chevron-down" class="w-4 h-4"></i>
+            </button>
+            <button onclick="openSpecsModal()" class="btn-outline text-xs sm:text-sm px-5 py-3 rounded-full flex items-center gap-2">
+              <i data-lucide="sliders" class="w-4 h-4 text-white/60"></i>
+              <span>Hardware Specs</span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Scroll indicator -->
+        <div class="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 text-white/40 text-xs">
+          <span class="tracking-widest uppercase text-[10px]">Scroll to Explode</span>
+          <div class="w-5 h-9 rounded-full border border-white/20 flex items-start justify-center p-1">
+            <div class="w-1.5 h-2.5 rounded-full bg-cyan-400 animate-bounce"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- BEAT 2: ENGINEERING REVEAL (15% – 40%) -->
+      <div id="beat-2" class="story-beat absolute inset-0 z-20 flex items-center px-6 sm:px-16 lg:px-24 pointer-events-none">
+        <div class="max-w-md lg:max-w-lg pointer-events-auto">
+          <div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+            <div class="absolute -top-10 -right-10 w-40 h-40 bg-blue-600/10 rounded-full blur-2xl"></div>
+            
+            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-3">
+              <i data-lucide="layers" class="w-4 h-4"></i> Stage 01 &bull; Architectural Drift
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
+              Precision-engineered for silence.
+            </h2>
+            <p class="text-sm sm:text-base text-white/65 leading-relaxed mb-4">
+              Custom drivers, sealed acoustic chambers, and optimized airflow deliver studio-grade clarity.
+            </p>
+            <p class="text-xs sm:text-sm text-white/50 leading-relaxed mb-6">
+              Every component is tuned for balance, power, and comfort—hour after hour. Sintered micro-vents equalize inner ear pressure to eliminate acoustic fatigue.
+            </p>
+
+            <div class="grid grid-cols-2 gap-3 pt-4 border-t border-white/10 text-xs">
+              <div>
+                <span class="text-white/40 block">Driver Size</span>
+                <span class="font-bold text-white text-sm">30mm Carbon Fiber</span>
+              </div>
+              <div>
+                <span class="text-white/40 block">Frequency Range</span>
+                <span class="font-bold text-cyan-300 text-sm">4 Hz &ndash; 40,000 Hz</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- BEAT 3: NOISE CANCELLING & MICROPHONES (40% – 65%) -->
+      <div id="beat-3" class="story-beat absolute inset-0 z-20 flex items-center justify-end px-6 sm:px-16 lg:px-24 pointer-events-none">
+        <div class="max-w-md lg:max-w-lg pointer-events-auto">
+          <div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+            <div class="absolute -top-10 -left-10 w-40 h-40 bg-cyan-600/10 rounded-full blur-2xl"></div>
+
+            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-3">
+              <i data-lucide="radio" class="w-4 h-4"></i> Stage 02 &bull; Neural Acoustic Array
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
+              Adaptive noise cancelling, redefined.
+            </h2>
+
+            <div class="space-y-3 mb-6">
+              <div class="flex items-start gap-3">
+                <div class="p-1.5 rounded-lg bg-blue-500/10 text-cyan-400 mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-xs sm:text-sm text-white/70">
+                  <strong class="text-white font-medium">12-Microphone Array:</strong> Samples environmental audio across 360 degrees at 768 kHz.
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="p-1.5 rounded-lg bg-blue-500/10 text-cyan-400 mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-xs sm:text-sm text-white/70">
+                  <strong class="text-white font-medium">Dual QN3 + V3 Silicon:</strong> Real-time inverted phase waveform calculations eliminate jet engine roars and office babble.
+                </p>
+              </div>
+              <div class="flex items-start gap-3">
+                <div class="p-1.5 rounded-lg bg-blue-500/10 text-cyan-400 mt-0.5">
+                  <i data-lucide="check" class="w-3.5 h-3.5"></i>
+                </div>
+                <p class="text-xs sm:text-sm text-white/70">
+                  <strong class="text-white font-medium">Auto NC Optimizer:</strong> Adapts automatically to hair, glasses, and atmospheric cabin pressure.
+                </p>
+              </div>
+            </div>
+
+            <div class="flex items-center justify-between text-xs bg-black/40 px-3.5 py-2.5 rounded-xl border border-white/5">
+              <span class="text-white/50">Processing Sampling</span>
+              <span class="text-cyan-400 font-mono font-semibold">768,000 samples / sec</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- BEAT 4: SOUND & UPSCALING (65% – 85%) -->
+      <div id="beat-4" class="story-beat absolute inset-0 z-20 flex items-center px-6 sm:px-16 lg:px-24 pointer-events-none">
+        <div class="max-w-md lg:max-w-lg pointer-events-auto">
+          <div class="glass-card rounded-2xl p-6 sm:p-8 relative overflow-hidden">
+            <div class="absolute -bottom-10 -right-10 w-40 h-40 bg-blue-600/15 rounded-full blur-2xl"></div>
+
+            <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-3">
+              <i data-lucide="activity" class="w-4 h-4"></i> Stage 03 &bull; Peak Exploded Blueprint
+            </div>
+            <h2 class="text-2xl sm:text-4xl font-bold tracking-tight text-white mb-4 leading-tight">
+              Immersive, lifelike sound.
+            </h2>
+            <p class="text-sm sm:text-base text-white/70 leading-relaxed mb-4">
+              High-performance drivers unlock detail, depth, and texture in every track.
+            </p>
+            <p class="text-xs sm:text-sm text-white/50 leading-relaxed mb-6">
+              AI-enhanced DSEE Ultimate upscaling restores harmonics to compressed streams, reconstructing spatial acoustic presence so every note feels alive.
+            </p>
+
+            <div class="grid grid-cols-3 gap-2 text-center text-xs">
+              <div class="bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <span class="text-white/40 block text-[10px]">Hi-Res Codec</span>
+                <span class="font-bold text-white">LDAC 990k</span>
+              </div>
+              <div class="bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <span class="text-white/40 block text-[10px]">Audio Engine</span>
+                <span class="font-bold text-cyan-300">DSEE Edge</span>
+              </div>
+              <div class="bg-black/40 p-2.5 rounded-xl border border-white/5">
+                <span class="text-white/40 block text-[10px]">Spatial</span>
+                <span class="font-bold text-white">360 Audio</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <!-- BEAT 5: REASSEMBLY & FINAL CTA (85% – 100%) -->
+      <div id="beat-5" class="story-beat absolute inset-0 z-20 flex flex-col items-center justify-center px-6 text-center pointer-events-none">
+        <div class="max-w-2xl flex flex-col items-center pointer-events-auto">
+          <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full text-xs font-semibold tracking-wide bg-gradient-to-r from-blue-600/20 to-cyan-400/20 text-cyan-300 border border-cyan-500/30 mb-6">
+            <i data-lucide="sparkles" class="w-3.5 h-3.5"></i> Precision Reassembled
+          </div>
+          <h2 class="text-3xl sm:text-5xl lg:text-6xl font-black tracking-tight text-gradient mb-4">
+            Hear everything.<br>Feel nothing else.
+          </h2>
+          <p class="text-lg sm:text-xl font-light text-gradient-cyan mb-4">
+            WH‑1000XM6. Designed for focus, crafted for comfort.
+          </p>
+          <p class="text-xs sm:text-sm text-white/50 max-w-md mb-8">
+            Engineered for airports, offices, and everything in between. Up to 38 hours of continuous battery with fast charging.
+          </p>
+
+          <div class="flex flex-col sm:flex-row items-center gap-4">
+            <button onclick="openPreorderModal()" class="btn-gradient text-sm sm:text-base px-8 py-3.5 rounded-full font-semibold flex items-center gap-2">
+              <span>Experience WH-1000XM6</span>
+              <i data-lucide="arrow-right" class="w-4 h-4"></i>
+            </button>
+            <button onclick="openSpecsModal()" class="btn-outline text-sm sm:text-base px-6 py-3.5 rounded-full font-medium flex items-center gap-2">
+              <i data-lucide="list" class="w-4 h-4"></i>
+              <span>See Full Specs</span>
+            </button>
+            <button onclick="openRAGModal()" class="px-5 py-3.5 rounded-full text-sm font-semibold bg-cyan-950/70 text-cyan-300 border border-cyan-500/40 hover:bg-cyan-900/60 transition flex items-center gap-2">
+              <i data-lucide="message-square" class="w-4 h-4 text-cyan-400"></i>
+              <span>Query Technical Manual</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+
+  <!-- ========================================================== -->
+  <!-- FLOATING INTERACTIVE CONTROLS DOCK (BOTTOM DOCK) -->
+  <!-- ========================================================== -->
+  <aside class="fixed bottom-6 left-1/2 -translate-x-1/2 z-40 w-[92%] max-w-4xl glass-card rounded-2xl px-5 py-3.5 flex flex-wrap items-center justify-between gap-4 border border-white/10 shadow-2xl">
+    
+    <!-- Scrub Control -->
+    <div class="flex items-center gap-3 flex-1 min-w-[200px]">
+      <button id="play-pause-btn" onclick="toggleAutoPlay()" class="p-2 rounded-lg bg-white/5 hover:bg-white/10 text-white/80 hover:text-white transition">
+        <i id="play-icon" data-lucide="play" class="w-4 h-4"></i>
+      </button>
+      <div class="flex-1 flex flex-col gap-1">
+        <div class="flex justify-between text-[11px] font-mono text-white/50">
+          <span>Exploded State</span>
+          <span id="frame-indicator">Frame 01 / 20</span>
+        </div>
+        <input id="scrub-slider" type="range" min="0" max="100" value="0" oninput="onScrubInput(this.value)" class="w-full">
+      </div>
+    </div>
+
+    <!-- Audio Experience Mode -->
+    <div class="flex items-center gap-2 border-l border-white/10 pl-4">
+      <span class="text-[11px] uppercase font-bold text-white/40 hidden sm:inline">Acoustic Mode</span>
+      <div class="flex items-center bg-black/50 p-1 rounded-xl border border-white/5 text-xs">
+        <button id="mode-anc" onclick="setAudioMode('anc')" class="px-3 py-1 rounded-lg font-medium text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 transition">
+          ANC Active
+        </button>
+        <button id="mode-ambient" onclick="setAudioMode('ambient')" class="px-3 py-1 rounded-lg font-medium text-white/50 hover:text-white transition">
+          Ambient
+        </button>
+        <button id="mode-spatial" onclick="setAudioMode('spatial')" class="px-3 py-1 rounded-lg font-medium text-white/50 hover:text-white transition">
+          360 Spatial
+        </button>
+      </div>
+    </div>
+
+    <!-- Live Frequency Wave Canvas -->
+    <div class="hidden lg:flex items-center gap-2 border-l border-white/10 pl-4">
+      <canvas id="freq-canvas" width="80" height="24" class="opacity-80"></canvas>
+      <span id="audio-freq-label" class="text-[10px] font-mono text-cyan-400">96kHz / 24bit</span>
+    </div>
+
+  </aside>
+
+
+  <!-- ========================================================== -->
+  <!-- MODAL 1: FULL SPECIFICATIONS DRAWER -->
+  <!-- ========================================================== -->
+  <div id="specs-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl hidden flex items-center justify-center p-4">
+    <div class="glass-card max-w-2xl w-full max-h-[90vh] overflow-y-auto rounded-3xl p-6 sm:p-8 border border-white/15 relative">
+      <button onclick="closeSpecsModal()" class="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-2">
+        <i data-lucide="cpu" class="w-4 h-4"></i> Hardware Architecture
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Sony WH-1000XM6 Technical Specs</h3>
+      <p class="text-sm text-white/50 mb-6">Complete hardware, acoustic, and silicon specifications validated by Sony Precision Labs.</p>
+
+      <div class="divide-y divide-white/10 text-sm">
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Acoustic Driver</span>
+          <span class="text-white font-medium text-right">30mm Carbon-Fiber Composite Dome + TPU Surround</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Frequency Response</span>
+          <span class="text-white font-medium text-right">4 Hz &ndash; 40,000 Hz (JEITA Standard)</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Active Noise Cancelling Silicon</span>
+          <span class="text-white font-medium text-right">Dual Processor QN3 + Integrated Processor V3</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Microphone Topology</span>
+          <span class="text-white font-medium text-right">12 Calibrated MEMS (4 feedforward, 4 feedback, 4 voice)</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Codecs Supported</span>
+          <span class="text-white font-medium text-right">LDAC (990 kbps), LC3plus, AAC, SBC</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Bluetooth Version</span>
+          <span class="text-white font-medium text-right">Bluetooth 5.4 LE Audio &bull; Multipoint Dual-Host</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Battery Endurance</span>
+          <span class="text-white font-medium text-right">38 hours (ANC ON) / 48 hours (ANC OFF)</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Fast Charging</span>
+          <span class="text-white font-medium text-right">3 min charge = 5 hours playback (USB-PD)</span>
+        </div>
+        <div class="py-3 flex justify-between">
+          <span class="text-white/60">Chassis Weight</span>
+          <span class="text-white font-medium text-right">248 grams (featherlight magnesium alloy frame)</span>
+        </div>
+      </div>
+
+      <div class="mt-8 flex justify-end gap-3">
+        <button onclick="closeSpecsModal()" class="btn-outline px-5 py-2.5 rounded-full text-xs font-semibold">Close</button>
+        <button onclick="closeSpecsModal(); openPreorderModal();" class="btn-gradient px-6 py-2.5 rounded-full text-xs font-semibold">Pre-order Now ($399)</button>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================== -->
+  <!-- MODAL 2: PRE-ORDER & BUY MODAL -->
+  <!-- ========================================================== -->
+  <div id="preorder-modal" class="fixed inset-0 z-50 bg-black/85 backdrop-blur-xl hidden flex items-center justify-center p-4">
+    <div class="glass-card max-w-lg w-full rounded-3xl p-6 sm:p-8 border border-white/15 relative">
+      <button onclick="closePreorderModal()" class="absolute top-6 right-6 p-2 rounded-full bg-white/5 hover:bg-white/10 text-white/60 hover:text-white">
+        <i data-lucide="x" class="w-5 h-5"></i>
+      </button>
+
+      <div class="flex items-center gap-2 text-xs font-semibold text-cyan-400 tracking-wider uppercase mb-2">
+        <i data-lucide="shopping-bag" class="w-4 h-4"></i> Flagship Reservation
+      </div>
+      <h3 class="text-2xl sm:text-3xl font-extrabold text-white mb-2">Reserve WH-1000XM6</h3>
+      <p class="text-sm text-white/50 mb-6">Select your premium finish and reserve your early access allocation.</p>
+
+      <!-- Color finishes -->
+      <div class="mb-6">
+        <label class="block text-xs font-semibold text-white/70 uppercase mb-3">Color Finish</label>
+        <div class="grid grid-cols-3 gap-3">
+          <button id="color-black" onclick="selectColor('black')" class="p-3 rounded-2xl border-2 border-cyan-400 bg-black/40 flex flex-col items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-[#111] border border-white/30"></div>
+            <span class="text-xs font-medium text-white">Matte Black</span>
+          </button>
+          <button id="color-silver" onclick="selectColor('silver')" class="p-3 rounded-2xl border-2 border-transparent hover:border-white/20 bg-black/40 flex flex-col items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-[#c8c9ce] border border-white/30"></div>
+            <span class="text-xs font-medium text-white/70">Platinum Silver</span>
+          </button>
+          <button id="color-navy" onclick="selectColor('navy')" class="p-3 rounded-2xl border-2 border-transparent hover:border-white/20 bg-black/40 flex flex-col items-center gap-2">
+            <div class="w-6 h-6 rounded-full bg-[#0a1832] border border-white/30"></div>
+            <span class="text-xs font-medium text-white/70">Midnight Navy</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- Pricing and perks -->
+      <div class="bg-black/40 p-4 rounded-2xl border border-white/10 mb-6 flex justify-between items-center">
+        <div>
+          <span class="text-xs text-white/40 block">Estimated Delivery</span>
+          <span class="text-sm font-semibold text-white">December 2026</span>
+        </div>
+        <div class="text-right">
+          <span class="text-xs text-cyan-400 block font-semibold">Priority Launch Edition</span>
+          <span class="text-2xl font-black text-white">$399.99</span>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-3">
+        <button onclick="completeReservation()" class="btn-gradient w-full py-3.5 rounded-full font-semibold text-sm">
+          Confirm Priority Reservation
+        </button>
+        <p class="text-center text-[11px] text-white/40">30-day money-back guarantee &bull; Free expedited worldwide delivery</p>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ========================================================== -->
+  <!-- MODAL 3: COMPLETE RAG DOCUMENT ENGINE & INGESTION STUDIO -->
+  <!-- (Supports ANY User File Upload, Live 7-Stage Stepper, Chunks & Chat) -->
+  <!-- ========================================================== -->
+  <div id="rag-modal" class="fixed inset-0 z-50 bg-black/90 backdrop-blur-2xl hidden flex flex-col p-4 sm:p-6 lg:p-8 overflow-hidden">
+    
+    <!-- Top Header -->
+    <div class="max-w-7xl w-full mx-auto flex items-center justify-between pb-4 border-b border-white/10">
+      <div class="flex items-center gap-3">
+        <div class="p-2.5 rounded-xl bg-gradient-to-tr from-blue-600 to-cyan-500 text-white shadow-lg">
+          <i data-lucide="cpu" class="w-6 h-6"></i>
+        </div>
+        <div>
+          <h2 class="text-lg sm:text-xl font-bold text-white flex items-center gap-2">
+            RAG Document Intelligence Studio
+            <span class="text-[11px] font-mono px-2 py-0.5 rounded-full bg-cyan-500/20 text-cyan-300 border border-cyan-500/30">
+              7-Stage Custom HC-SW Engine
+            </span>
+          </h2>
+          <p class="text-xs text-white/50">Upload any document, observe the complete end-to-end RAG pipeline execute, and chat with instant grounded answers.</p>
+        </div>
+      </div>
+
+      <div class="flex items-center gap-3">
+        <button onclick="loadSampleManual('sony')" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-white/80 transition">
+          <i data-lucide="file-text" class="w-3.5 h-3.5 text-cyan-400"></i> Load Sony WH-1000XM6 Manual
+        </button>
+        <button onclick="loadSampleManual('ai')" class="hidden sm:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl text-xs font-medium bg-white/5 border border-white/10 hover:bg-white/10 text-white/80 transition">
+          <i data-lucide="bot" class="w-3.5 h-3.5 text-blue-400"></i> Load AI Whitepaper
+        </button>
+        <button onclick="closeRAGModal()" class="p-2 rounded-full bg-white/10 hover:bg-white/20 text-white transition">
+          <i data-lucide="x" class="w-5 h-5"></i>
+        </button>
+      </div>
+    </div>
+
+    <!-- Main Studio Split View (Upload & Stepper on Left, Chat & Inspector on Right) -->
+    <div class="max-w-7xl w-full mx-auto flex-1 grid grid-cols-1 lg:grid-cols-12 gap-6 pt-5 overflow-hidden">
+      
+      <!-- LEFT COLUMN: Drag-Drop Upload & 7-Stage Live Stepper (5 Cols) -->
+      <div class="lg:col-span-5 flex flex-col gap-4 overflow-y-auto pr-1">
+        
+        <!-- Drag & Drop File Upload Box -->
+        <div id="drop-zone" class="glass-card rounded-2xl p-5 border-2 border-dashed border-white/15 hover:border-cyan-400/50 transition-all flex flex-col items-center justify-center text-center cursor-pointer group relative overflow-hidden" onclick="document.getElementById('file-input').click()">
+          <input id="file-input" type="file" class="hidden" accept=".md,.markdown,.txt,.rst,.json,.py,.csv,.html,.log" onchange="handleFileSelect(event)">
+          <div class="w-12 h-12 rounded-2xl bg-cyan-950/60 border border-cyan-500/30 flex items-center justify-center text-cyan-400 mb-3 group-hover:scale-110 transition">
+            <i data-lucide="upload-cloud" class="w-6 h-6"></i>
+          </div>
+          <p class="text-sm font-semibold text-white mb-1">Drop any document here, or <span class="text-cyan-400 underline">browse</span></p>
+          <p class="text-[11px] text-white/40">Supported: .md, .txt, .json, .py, .csv, .rst (up to 10 MB)</p>
+          
+          <div id="upload-status" class="hidden mt-3 text-xs font-mono text-cyan-300 flex items-center gap-2">
+            <div class="w-3 h-3 rounded-full border-2 border-cyan-400 border-t-transparent animate-spin"></div>
+            <span>Executing 7-stage RAG ingestion...</span>
+          </div>
+        </div>
+
+        <!-- Active Document Card -->
+        <div class="glass-card rounded-2xl p-4 border border-white/10 flex items-center justify-between">
+          <div class="flex items-center gap-3">
+            <div class="p-2 rounded-xl bg-blue-500/10 text-cyan-400">
+              <i data-lucide="file-check-2" class="w-5 h-5"></i>
+            </div>
+            <div>
+              <span id="active-doc-name" class="text-xs font-bold text-white block">sony_wh1000xm6_manual.md</span>
+              <span id="active-doc-meta" class="text-[10px] text-white/40 font-mono">15 Chunks &bull; ~1,295 Tokens &bull; 5,975 Chars</span>
+            </div>
+          </div>
+          <button onclick="toggleChunksView()" class="btn-outline text-[11px] px-3 py-1 rounded-lg">
+            Inspect Chunks
+          </button>
+        </div>
+
+        <!-- 7-Stage Pipeline Live Stepper Cards -->
+        <div class="flex-1 flex flex-col gap-2">
+          <span class="text-[11px] uppercase tracking-wider font-bold text-white/40 px-1">Pipeline Stage Execution</span>
+
+          <!-- Stage 1 -->
+          <div id="step-card-1" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">1</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">Upload & SHA-256 Validation</span>
+                <span id="step-time-1" class="text-[10px] font-mono text-cyan-400">5.37ms</span>
+              </div>
+              <p id="step-desc-1" class="text-[11px] text-white/50 mt-0.5">Validates file integrity and stages to local storage.</p>
+            </div>
+          </div>
+
+          <!-- Stage 2 -->
+          <div id="step-card-2" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">2</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">Load & Encoding Detection</span>
+                <span id="step-time-2" class="text-[10px] font-mono text-cyan-400">0.54ms</span>
+              </div>
+              <p id="step-desc-2" class="text-[11px] text-white/50 mt-0.5">Decodes bytes and extracts character/line metrics.</p>
+            </div>
+          </div>
+
+          <!-- Stage 3 -->
+          <div id="step-card-3" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">3</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">Structural Splitting</span>
+                <span id="step-time-3" class="text-[10px] font-mono text-cyan-400">0.37ms</span>
+              </div>
+              <p id="step-desc-3" class="text-[11px] text-white/50 mt-0.5">Builds hierarchical section tree (H1 > H2 > H3).</p>
+            </div>
+          </div>
+
+          <!-- Stage 4 -->
+          <div id="step-card-4" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">4</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">Normalization & Noise Cleaning</span>
+                <span id="step-time-4" class="text-[10px] font-mono text-cyan-400">0.62ms</span>
+              </div>
+              <p id="step-desc-4" class="text-[11px] text-white/50 mt-0.5">Strips markdown artifacts and normalizes unicode.</p>
+            </div>
+          </div>
+
+          <!-- Stage 5 -->
+          <div id="step-card-5" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">5</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">Custom HC-SW Chunking</span>
+                <span id="step-time-5" class="text-[10px] font-mono text-cyan-400">0.18ms</span>
+              </div>
+              <p id="step-desc-5" class="text-[11px] text-white/50 mt-0.5">Snaps cleanly at sentence boundaries with context breadcrumbs.</p>
+            </div>
+          </div>
+
+          <!-- Stage 6 -->
+          <div id="step-card-6" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">6</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">Dense Vector Embedding</span>
+                <span id="step-time-6" class="text-[10px] font-mono text-cyan-400">521.9ms</span>
+              </div>
+              <p id="step-desc-6" class="text-[11px] text-white/50 mt-0.5">Encodes into 384-dim vectors via all-MiniLM-L6-v2.</p>
+            </div>
+          </div>
+
+          <!-- Stage 7 -->
+          <div id="step-card-7" class="glass-card rounded-xl p-3 border border-white/5 flex items-start gap-3">
+            <div class="step-num w-6 h-6 rounded-full bg-cyan-500/20 text-cyan-300 text-xs font-bold flex items-center justify-center shrink-0">7</div>
+            <div class="flex-1">
+              <div class="flex items-center justify-between">
+                <span class="text-xs font-semibold text-white">ChromaDB Persistent Indexing</span>
+                <span id="step-time-7" class="text-[10px] font-mono text-cyan-400">16.35ms</span>
+              </div>
+              <p id="step-desc-7" class="text-[11px] text-white/50 mt-0.5">Stores vectors and metadata into cosine similarity space.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+
+      <!-- RIGHT COLUMN: Interactive Chat & Chunk Explorer (7 Cols) -->
+      <div class="lg:col-span-7 flex flex-col glass-card rounded-2xl border border-white/10 overflow-hidden">
+        
+        <!-- Chat Header Tabs -->
+        <div class="px-5 py-3 border-b border-white/10 flex items-center justify-between bg-black/30">
+          <div class="flex items-center gap-2">
+            <button id="tab-chat" onclick="showRAGTab('chat')" class="px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-white">
+              AI Chat Assistant
+            </button>
+            <button id="tab-chunks" onclick="showRAGTab('chunks')" class="px-3 py-1.5 rounded-lg text-xs font-medium text-white/50 hover:text-white">
+              Chunk Inspector (<span id="chunk-tab-count">15</span>)
+            </button>
+          </div>
+          <span class="text-[11px] text-cyan-400 font-mono">Similarity Retrieval: Cosine Distance</span>
+        </div>
+
+        <!-- TAB 1: INTERACTIVE CHAT VIEW -->
+        <div id="chat-view" class="flex-1 flex flex-col overflow-hidden">
+          
+          <!-- Messages container -->
+          <div id="chat-messages" class="flex-1 overflow-y-auto p-5 space-y-4">
+            <!-- Initial welcome message -->
+            <div class="flex gap-3">
+              <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 text-xs font-bold">
+                AI
+              </div>
+              <div class="flex-1 bg-white/5 rounded-2xl p-4 text-xs sm:text-sm text-white/80 leading-relaxed border border-white/5">
+                <p class="font-semibold text-white mb-1">RAG Knowledge Engine Ready &bull; Ask anything about the loaded file!</p>
+                <p>The Sony WH-1000XM6 engineering manual is currently indexed. Try asking about the carbon composite driver, QN3 processor, 12-mic array, or battery fast-charging.</p>
+              </div>
+            </div>
+          </div>
+
+          <!-- Suggested Query Chips -->
+          <div class="px-5 py-2 flex items-center gap-2 overflow-x-auto border-t border-white/5 bg-black/20 text-xs">
+            <span class="text-[10px] text-white/40 uppercase tracking-wider shrink-0">Try:</span>
+            <button onclick="askQuery('What dynamic driver is used in the WH-1000XM6?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white shrink-0">
+              30mm Driver specs
+            </button>
+            <button onclick="askQuery('How does the dual-chip QN3 and V3 noise cancelling work?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white shrink-0">
+              Dual QN3 processor
+            </button>
+            <button onclick="askQuery('What is the battery endurance and fast charging time?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white shrink-0">
+              Battery & Charging
+            </button>
+            <button onclick="askQuery('How many microphones are in the chassis?')" class="px-2.5 py-1 rounded-full bg-white/5 hover:bg-white/10 text-white/70 hover:text-white shrink-0">
+              Microphone array
+            </button>
+          </div>
+
+          <!-- Chat Input Bar -->
+          <div class="p-4 border-t border-white/10 bg-black/40 flex items-center gap-3">
+            <input id="chat-input" type="text" placeholder="Ask a question about the uploaded document..." onkeydown="if(event.key === 'Enter') sendQuery()" class="flex-1 bg-black/50 border border-white/15 focus:border-cyan-400 rounded-xl px-4 py-3 text-xs sm:text-sm text-white placeholder-white/40 outline-none transition">
+            <button id="chat-send-btn" onclick="sendQuery()" class="btn-gradient px-5 py-3 rounded-xl text-xs sm:text-sm font-semibold flex items-center gap-1.5">
+              <span>Send</span>
+              <i data-lucide="send" class="w-3.5 h-3.5"></i>
+            </button>
+          </div>
+        </div>
+
+        <!-- TAB 2: CHUNK INSPECTOR VIEW -->
+        <div id="chunks-view" class="flex-1 overflow-y-auto p-5 space-y-3 hidden">
+          <div class="flex items-center justify-between mb-2">
+            <h4 class="text-xs font-bold text-white uppercase tracking-wider">Contextual Chunks Created by HC-SW</h4>
+            <span class="text-[11px] text-cyan-400 font-mono">Max size: 450 chars &bull; Overlap: 110 chars</span>
+          </div>
+          <div id="chunks-list" class="space-y-3">
+            <!-- Dynamic chunks injected here -->
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <!-- ========================================================== -->
+  <!-- SCRIPT LOGIC (CANVAS SCROLLYTELLING, AUDIO, AND RAG STUDIO) -->
+  <!-- ========================================================== -->
+  <script>
+    // Initialize Lucide icons
+    lucide.createIcons();
+
+    // ==========================================================
+    // 1. IMAGE SEQUENCE & CANVAS SCROLL ENGINE
+    // ==========================================================
+    const TOTAL_FRAMES = 20;
+    const canvas = document.getElementById('product-canvas');
+    const ctx = canvas.getContext('2d');
+    const scrollyContainer = document.getElementById('scrolly-container');
+    const frameIndicator = document.getElementById('frame-indicator');
+    const scrubSlider = document.getElementById('scrub-slider');
+    const navbar = document.getElementById('navbar');
+
+    let loadedImages = [];
+    let imagesLoadedCount = 0;
+    let currentFrameIndex = 0;
+    let isAutoPlaying = false;
+    let autoPlayInterval = null;
+
+    // Set canvas dimensions to device pixel ratio
+    function resizeCanvas() {
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = window.innerWidth * dpr;
+      canvas.height = window.innerHeight * dpr;
+      ctx.scale(dpr, dpr);
+      renderFrame(currentFrameIndex);
+    }
+    window.addEventListener('resize', resizeCanvas);
+
+    // Preload image sequence frames
+    function preloadFrames() {
+      for (let i = 1; i <= TOTAL_FRAMES; i++) {
+        const img = new Image();
+        const numStr = String(i).padStart(3, '0');
+        img.src = `/static/frames/ezgif-frame-${numStr}.jpg`;
+        img.onload = () => {
+          imagesLoadedCount++;
+          if (imagesLoadedCount === 1) {
+            resizeCanvas();
+            renderFrame(0);
+          }
+        };
+        loadedImages.push(img);
+      }
+    }
+    preloadFrames();
+
+    // Render frame with seamless containment and sub-frame alpha blending
+    function renderFrame(indexFloat) {
+      if (loadedImages.length === 0) return;
+      const baseIdx = Math.min(TOTAL_FRAMES - 1, Math.max(0, Math.floor(indexFloat)));
+      const nextIdx = Math.min(TOTAL_FRAMES - 1, baseIdx + 1);
+      const alphaNext = indexFloat - baseIdx;
+
+      const dpr = window.devicePixelRatio || 1;
+      const w = canvas.width / dpr;
+      const h = canvas.height / dpr;
+
+      // Pure seamless dark background matching #050505
+      ctx.fillStyle = '#050505';
+      ctx.fillRect(0, 0, w, h);
+
+      const img = loadedImages[baseIdx];
+      if (!img || !img.complete) return;
+
+      // Contain scaling
+      const scale = Math.min(w / img.width, h / img.height);
+      const drawW = img.width * scale;
+      const drawH = img.height * scale;
+      const drawX = (w - drawW) / 2;
+      const drawY = (h - drawH) / 2;
+
+      // Draw base frame
+      ctx.globalAlpha = 1.0;
+      ctx.drawImage(img, drawX, drawY, drawW, drawH);
+
+      // Interpolate with next frame for 120 FPS feel
+      if (alphaNext > 0.02 && loadedImages[nextIdx] && loadedImages[nextIdx].complete) {
+        ctx.globalAlpha = alphaNext;
+        ctx.drawImage(loadedImages[nextIdx], drawX, drawY, drawW, drawH);
+        ctx.globalAlpha = 1.0;
+      }
+
+      currentFrameIndex = indexFloat;
+      const displayFrameNum = Math.min(TOTAL_FRAMES, Math.floor(indexFloat) + 1);
+      frameIndicator.innerText = `Frame ${String(displayFrameNum).padStart(2, '0')} / ${TOTAL_FRAMES}`;
+      scrubSlider.value = Math.round((indexFloat / (TOTAL_FRAMES - 1)) * 100);
+    }
+
+    // Scroll listener mapping scroll progress to frame sequence and story beats
+    window.addEventListener('scroll', () => {
+      const scrollTop = window.scrollY;
+      const maxScroll = scrollyContainer.scrollHeight - window.innerHeight;
+      const progress = Math.min(1.0, Math.max(0.0, scrollTop / maxScroll));
+
+      // Fade-in navbar after 30px scroll (Apple-style)
+      if (scrollTop > 30) {
+        navbar.classList.add('glass-nav');
+        navbar.classList.remove('py-3.5');
+        navbar.classList.add('py-2.5');
+      } else {
+        navbar.classList.remove('glass-nav');
+        navbar.classList.add('py-3.5');
+        navbar.classList.remove('py-2.5');
+      }
+
+      // Map progress to exploded & reassembly sequence:
+      // 0.00 - 0.15: Assembled beauty shot (Frame 0)
+      // 0.15 - 0.70: Exploding into technical diagram (Frames 0 -> 19)
+      // 0.70 - 0.85: Peak exploded technical diagram (Frame 19)
+      // 0.85 - 1.00: Reassembling back into final hero state (Frames 19 -> 0)
+      let targetFrame = 0;
+      if (progress < 0.15) {
+        targetFrame = 0;
+      } else if (progress < 0.70) {
+        const t = (progress - 0.15) / (0.70 - 0.15);
+        targetFrame = t * 19;
+      } else if (progress < 0.85) {
+        targetFrame = 19;
+      } else {
+        const t = (progress - 0.85) / (1.00 - 0.85);
+        targetFrame = (1 - t) * 19;
+      }
+
+      renderFrame(targetFrame);
+      updateStoryBeats(progress);
+    }, { passive: true });
+
+    // Story Beats Visibility Sync
+    function updateStoryBeats(p) {
+      const beat1 = document.getElementById('beat-1');
+      const beat2 = document.getElementById('beat-2');
+      const beat3 = document.getElementById('beat-3');
+      const beat4 = document.getElementById('beat-4');
+      const beat5 = document.getElementById('beat-5');
+
+      beat1.classList.toggle('active', p >= 0.00 && p < 0.15);
+      beat2.classList.toggle('active', p >= 0.15 && p < 0.40);
+      beat3.classList.toggle('active', p >= 0.40 && p < 0.65);
+      beat4.classList.toggle('active', p >= 0.65 && p < 0.85);
+      beat5.classList.toggle('active', p >= 0.85 && p <= 1.00);
+    }
+
+    // Scroll to progress helper
+    function scrollToProgress(p) {
+      const maxScroll = scrollyContainer.scrollHeight - window.innerHeight;
+      window.scrollTo({
+        top: p * maxScroll,
+        behavior: 'smooth'
+      });
+    }
+
+    // Scrub slider input
+    function onScrubInput(val) {
+      const targetFrame = (val / 100) * (TOTAL_FRAMES - 1);
+      renderFrame(targetFrame);
+    }
+
+    // Toggle auto-play exploded view
+    function toggleAutoPlay() {
+      isAutoPlaying = !isAutoPlaying;
+      const playIcon = document.getElementById('play-icon');
+      if (isAutoPlaying) {
+        playIcon.setAttribute('data-lucide', 'pause');
+        lucide.createIcons();
+        autoPlayInterval = setInterval(() => {
+          let next = (currentFrameIndex + 0.4);
+          if (next >= TOTAL_FRAMES) next = 0;
+          renderFrame(next);
+        }, 33);
+      } else {
+        playIcon.setAttribute('data-lucide', 'play');
+        lucide.createIcons();
+        clearInterval(autoPlayInterval);
+      }
+    }
+
+
+    // ==========================================================
+    // 2. LIVE AUDIO SPECTRUM VISUALIZER (CANVAS)
+    // ==========================================================
+    const freqCanvas = document.getElementById('freq-canvas');
+    const freqCtx = freqCanvas.getContext('2d');
+    let audioMode = 'anc';
+
+    function drawAudioVisualizer() {
+      freqCtx.clearRect(0, 0, freqCanvas.width, freqCanvas.height);
+      const bars = 10;
+      const barWidth = 4;
+      const spacing = 3;
+      const time = Date.now() * 0.004;
+
+      for (let i = 0; i < bars; i++) {
+        let h;
+        if (audioMode === 'anc') {
+          // Flattened quiet waves
+          h = 3 + Math.sin(time + i * 0.8) * 2;
+          freqCtx.fillStyle = '#00d6ff';
+        } else if (audioMode === 'ambient') {
+          // Moderate dynamic waves
+          h = 6 + Math.sin(time * 1.5 + i * 1.2) * 5;
+          freqCtx.fillStyle = '#38bdf8';
+        } else {
+          // Spatial wide amplitude waves
+          h = 10 + Math.sin(time * 2.5 + i * 0.7) * 8;
+          freqCtx.fillStyle = '#818cf8';
+        }
+        const x = i * (barWidth + spacing);
+        const y = freqCanvas.height - h;
+        freqCtx.fillRect(x, y, barWidth, h);
+      }
+      requestAnimationFrame(drawAudioVisualizer);
+    }
+    requestAnimationFrame(drawAudioVisualizer);
+
+    function setAudioMode(mode) {
+      audioMode = mode;
+      const btnAnc = document.getElementById('mode-anc');
+      const btnAmb = document.getElementById('mode-ambient');
+      const btnSpa = document.getElementById('mode-spatial');
+      const lbl = document.getElementById('audio-freq-label');
+
+      [btnAnc, btnAmb, btnSpa].forEach(b => {
+        b.className = 'px-3 py-1 rounded-lg font-medium text-white/50 hover:text-white transition';
+      });
+
+      if (mode === 'anc') {
+        btnAnc.className = 'px-3 py-1 rounded-lg font-medium text-cyan-400 bg-cyan-950/60 border border-cyan-500/30 transition';
+        lbl.innerText = 'ANC &bull; -38dB Quiet';
+      } else if (mode === 'ambient') {
+        btnAmb.className = 'px-3 py-1 rounded-lg font-medium text-sky-400 bg-sky-950/60 border border-sky-500/30 transition';
+        lbl.innerText = 'Transparency 20-Ch';
+      } else {
+        btnSpa.className = 'px-3 py-1 rounded-lg font-medium text-indigo-400 bg-indigo-950/60 border border-indigo-500/30 transition';
+        lbl.innerText = '360 Binaural HRTF';
+      }
+    }
+
+
+    // ==========================================================
+    // 3. MODALS LOGIC (SPECS, PREORDER)
+    // ==========================================================
+    function openSpecsModal() {
+      document.getElementById('specs-modal').classList.remove('hidden');
+    }
+    function closeSpecsModal() {
+      document.getElementById('specs-modal').classList.add('hidden');
+    }
+
+    function openPreorderModal() {
+      document.getElementById('preorder-modal').classList.remove('hidden');
+    }
+    function closePreorderModal() {
+      document.getElementById('preorder-modal').classList.add('hidden');
+    }
+
+    function selectColor(color) {
+      ['black', 'silver', 'navy'].forEach(c => {
+        const btn = document.getElementById(`color-${c}`);
+        if (c === color) {
+          btn.className = 'p-3 rounded-2xl border-2 border-cyan-400 bg-black/40 flex flex-col items-center gap-2';
+        } else {
+          btn.className = 'p-3 rounded-2xl border-2 border-transparent hover:border-white/20 bg-black/40 flex flex-col items-center gap-2';
+        }
+      });
+    }
+
+    function completeReservation() {
+      alert("✓ Priority reservation confirmed! Welcome to the next era of Sony acoustic excellence. Check your email for shipping tracking.");
+      closePreorderModal();
+    }
+
+
+    // ==========================================================
+    // 4. RAG DOCUMENT INTELLIGENCE STUDIO LOGIC
+    // ==========================================================
+    function openRAGModal() {
+      document.getElementById('rag-modal').classList.remove('hidden');
+      fetchDocStatus();
+    }
+    function closeRAGModal() {
+      document.getElementById('rag-modal').classList.add('hidden');
+    }
+
+    function showRAGTab(tab) {
+      const tabChat = document.getElementById('tab-chat');
+      const tabChunks = document.getElementById('tab-chunks');
+      const chatView = document.getElementById('chat-view');
+      const chunksView = document.getElementById('chunks-view');
+
+      if (tab === 'chat') {
+        tabChat.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-white';
+        tabChunks.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-white/50 hover:text-white';
+        chatView.classList.remove('hidden');
+        chunksView.classList.add('hidden');
+      } else {
+        tabChunks.className = 'px-3 py-1.5 rounded-lg text-xs font-semibold bg-white/10 text-white';
+        tabChat.className = 'px-3 py-1.5 rounded-lg text-xs font-medium text-white/50 hover:text-white';
+        chunksView.classList.remove('hidden');
+        chatView.classList.add('hidden');
+        fetchChunks();
+      }
+    }
+
+    function toggleChunksView() {
+      showRAGTab('chunks');
+    }
+
+    // Drag and drop event listeners
+    const dropZone = document.getElementById('drop-zone');
+    ['dragenter', 'dragover'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.add('border-cyan-400', 'bg-cyan-950/20');
+      }, false);
+    });
+    ['dragleave', 'drop'].forEach(eventName => {
+      dropZone.addEventListener(eventName, (e) => {
+        e.preventDefault();
+        dropZone.classList.remove('border-cyan-400', 'bg-cyan-950/20');
+      }, false);
+    });
+    dropZone.addEventListener('drop', (e) => {
+      const dt = e.dataTransfer;
+      const files = dt.files;
+      if (files.length > 0) {
+        uploadFile(files[0]);
+      }
+    });
+
+    function handleFileSelect(event) {
+      const file = event.target.files[0];
+      if (file) {
+        uploadFile(file);
+      }
+    }
+
+    // Upload & execute 7-stage pipeline via backend API
+    async function uploadFile(file) {
+      const uploadStatus = document.getElementById('upload-status');
+      uploadStatus.classList.remove('hidden');
+
+      const formData = new FormData();
+      formData.append('file', file);
+
+      try {
+        const res = await fetch('/api/upload', {
+          method: 'POST',
+          body: formData
+        });
+        const data = await res.json();
+
+        if (data.success) {
+          updatePipelineTelemetry(data);
+          addChatMessage('system', `✓ Successfully ingested "${data.doc_info.filename}" (${data.doc_info.chunks_count} chunks, ${data.doc_info.total_tokens} tokens) through all 7 RAG stages in ${data.total_duration_ms}ms.`);
+        } else {
+          alert('Upload failed: ' + data.error);
+        }
+      } catch (err) {
+        alert('Network/Server error during ingestion: ' + err.message);
+      } finally {
+        uploadStatus.classList.add('hidden');
+      }
+    }
+
+    // Load sample manuals (Sony Manual or AI Agent Systems)
+    async function loadSampleManual(sampleKey) {
+      const uploadStatus = document.getElementById('upload-status');
+      uploadStatus.classList.remove('hidden');
+
+      try {
+        const res = await fetch('/api/load-sample', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ sample: sampleKey })
+        });
+        const data = await res.json();
+        if (data.success) {
+          updatePipelineTelemetry(data);
+          addChatMessage('system', `✓ Switched to "${data.doc_info.filename}" (${data.doc_info.chunks_count} chunks). Ask any question!`);
+        }
+      } catch (err) {
+        console.error(err);
+      } finally {
+        uploadStatus.classList.add('hidden');
+      }
+    }
+
+    // Update UI step cards with real timing and stats
+    function updatePipelineTelemetry(data) {
+      const doc = data.doc_info;
+      document.getElementById('active-doc-name').innerText = doc.filename;
+      document.getElementById('active-doc-meta').innerText = `${doc.chunks_count} Chunks • ~${doc.total_tokens} Tokens • ${doc.characters} Chars`;
+      document.getElementById('chunk-tab-count').innerText = doc.chunks_count;
+
+      if (data.steps) {
+        data.steps.forEach(s => {
+          const num = s.step_number;
+          const timeElem = document.getElementById(`step-time-${num}`);
+          const descElem = document.getElementById(`step-desc-${num}`);
+          if (timeElem) timeElem.innerText = `${s.duration_ms}ms`;
+          if (descElem) descElem.innerText = s.summary;
+        });
+      }
+    }
+
+    // Fetch active document status on open
+    async function fetchDocStatus() {
+      try {
+        const res = await fetch('/api/status');
+        const data = await res.json();
+        if (data.doc_info) {
+          updatePipelineTelemetry(data);
+        }
+      } catch (err) {
+        console.error('Status fetch error:', err);
+      }
+    }
+
+    // Fetch and display chunks in Chunk Inspector
+    async function fetchChunks() {
+      const container = document.getElementById('chunks-list');
+      container.innerHTML = '<div class="text-xs text-white/50">Loading chunks...</div>';
+      try {
+        const res = await fetch('/api/chunks');
+        const data = await res.json();
+        if (data.chunks && data.chunks.length > 0) {
+          container.innerHTML = '';
+          data.chunks.forEach((c, idx) => {
+            const el = document.createElement('div');
+            el.className = 'glass-card rounded-xl p-3.5 border border-white/5 hover:border-cyan-400/30 transition text-xs';
+            el.innerHTML = `
+              <div class="flex items-center justify-between mb-1 text-cyan-300 font-mono text-[10px]">
+                <span>Chunk #${c.index + 1} &bull; ${c.chunk_id}</span>
+                <span>${c.char_length} chars (~${c.estimated_tokens} tokens)</span>
+              </div>
+              <div class="font-semibold text-white/90 text-[11px] mb-1.5 flex items-center gap-1">
+                <i data-lucide="folder-tree" class="w-3 h-3 text-cyan-400"></i>
+                ${c.header_path || 'Root Section'}
+              </div>
+              <p class="text-white/60 text-[11px] font-mono bg-black/40 p-2 rounded-lg leading-relaxed whitespace-pre-wrap">${escapeHtml(c.content)}</p>
+            `;
+            container.appendChild(el);
+          });
+          lucide.createIcons();
+        } else {
+          container.innerHTML = '<div class="text-xs text-white/50">No chunks indexed yet. Upload a file above.</div>';
+        }
+      } catch (err) {
+        container.innerHTML = `<div class="text-xs text-red-400">Failed to load chunks: ${err.message}</div>`;
+      }
+    }
+
+    // Q&A Chat interaction
+    function askQuery(queryText) {
+      document.getElementById('chat-input').value = queryText;
+      sendQuery();
+    }
+
+    async function sendQuery() {
+      const input = document.getElementById('chat-input');
+      const query = input.value.trim();
+      if (!query) return;
+
+      input.value = '';
+      addChatMessage('user', query);
+
+      const sendBtn = document.getElementById('chat-send-btn');
+      sendBtn.disabled = true;
+
+      try {
+        const res = await fetch('/api/chat', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ query: query })
+        });
+        const data = await res.json();
+        addBotMessage(data);
+      } catch (err) {
+        addChatMessage('system', `Error contacting RAG vector server: ${err.message}`);
+      } finally {
+        sendBtn.disabled = false;
+        input.focus();
+      }
+    }
+
+    function addChatMessage(role, text) {
+      const container = document.getElementById('chat-messages');
+      const msg = document.createElement('div');
+      msg.className = 'flex gap-3 ' + (role === 'user' ? 'justify-end' : '');
+
+      if (role === 'user') {
+        msg.innerHTML = `
+          <div class="bg-blue-600 text-white rounded-2xl rounded-tr-sm px-4 py-3 text-xs sm:text-sm max-w-[85%] leading-relaxed shadow-md">
+            ${escapeHtml(text)}
+          </div>
+          <div class="w-7 h-7 rounded-lg bg-blue-500/20 text-blue-300 flex items-center justify-center shrink-0 text-xs font-bold">
+            You
+          </div>
+        `;
+      } else {
+        msg.innerHTML = `
+          <div class="w-7 h-7 rounded-lg bg-cyan-500/20 text-cyan-400 flex items-center justify-center shrink-0 text-xs font-bold">
+            SYS
+          </div>
+          <div class="bg-white/5 rounded-2xl rounded-tl-sm p-3 text-xs text-cyan-300/90 leading-relaxed border border-white/5 max-w-[85%]">
+            ${escapeHtml(text)}
+          </div>
+        `;
+      }
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+    }
+
+    function addBotMessage(data) {
+      const container = document.getElementById('chat-messages');
+      const msg = document.createElement('div');
+      msg.className = 'flex gap-3';
+
+      const conf = Math.round((data.confidence || 0) * 100);
+
+      let sourcesHtml = '';
+      if (data.sources && data.sources.length > 0) {
+        sourcesHtml = `
+          <div class="mt-3 pt-3 border-t border-white/10 space-y-2">
+            <span class="text-[10px] uppercase font-bold text-cyan-400 tracking-wider flex items-center gap-1">
+              <i data-lucide="book-open" class="w-3 h-3"></i> Grounded Source Chunks (${data.sources.length})
+            </span>
+            ${data.sources.map((s, idx) => `
+              <div class="bg-black/40 p-2.5 rounded-lg border border-white/5 text-[11px]">
+                <div class="flex justify-between text-white/50 text-[10px] mb-1">
+                  <span class="text-cyan-300 font-semibold">[${idx + 1}] ${escapeHtml(s.section)}</span>
+                  <span class="font-mono text-cyan-400">Sim: ${(s.similarity_score * 100).toFixed(1)}%</span>
+                </div>
+                <div class="text-white/60 text-[11px] line-clamp-2">${escapeHtml(s.snippet)}</div>
+              </div>
+            `).join('')}
+          </div>
+        `;
+      }
+
+      msg.innerHTML = `
+        <div class="w-7 h-7 rounded-lg bg-gradient-to-tr from-blue-600 to-cyan-400 text-black flex items-center justify-center shrink-0 text-xs font-black shadow-md">
+          AI
+        </div>
+        <div class="flex-1 bg-white/5 rounded-2xl rounded-tl-sm p-4 text-xs sm:text-sm text-white/90 leading-relaxed border border-white/5">
+          <div class="flex items-center justify-between text-[11px] text-white/40 mb-2 font-mono">
+            <span>Section: ${escapeHtml(data.top_section || 'Document')}</span>
+            <span class="text-cyan-400 font-semibold">Confidence: ${conf}%</span>
+          </div>
+          <div class="whitespace-pre-wrap">${formatMarkdown(data.answer)}</div>
+          ${sourcesHtml}
+        </div>
+      `;
+
+      container.appendChild(msg);
+      container.scrollTop = container.scrollHeight;
+      lucide.createIcons();
+    }
+
+    function escapeHtml(str) {
+      if (!str) return '';
+      return String(str).replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+    }
+
+    function formatMarkdown(text) {
+      if (!text) return '';
+      let escaped = escapeHtml(text);
+      // bold **text**
+      escaped = escaped.replace(/\*\*(.*?)\*\*/g, '<strong class="text-white font-semibold">$1</strong>');
+      return escaped;
+    }
+  </script>
+
+</body>
+</html>
